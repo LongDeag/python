@@ -1,0 +1,15 @@
+ax, ay, bx, by, cx, cy = [float(i) for i in input().split()]
+
+ab_ac = (bx-ax)*(cx-ax) + (by-ay)*(cy-ay)
+ba_bc = (ax-bx)*(cx-bx) + (ay-by)*(cy-by)
+ca_cb = (ax-cx)*(bx-cx) + (ay-cy)*(by-cy)
+
+if (bx-ax)*(cy-ay)-(by-ay)*(cx-ax) == 0:
+    print("line")
+else:
+    if ab_ac == 0 or ba_bc == 0 or ca_cb == 0:
+        print("right")
+    if ab_ac > 0 and ba_bc > 0 and ca_cb > 0:
+        print("acute")
+    if ab_ac < 0 or ba_bc < 0 or ca_cb < 0:
+        print("obtuse")
